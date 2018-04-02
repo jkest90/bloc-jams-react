@@ -6,4 +6,8 @@ const Album = () => (
    </section>
 );
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> react-assignment-3.3
 export default Album;
