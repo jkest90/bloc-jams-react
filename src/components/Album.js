@@ -5,7 +5,7 @@ class Album extends Component {
    constructor(props) {
       super(props);
 
-      // retrieve the matching album object and assign it to an album variable.
+      // retrieve the matching album object and assign it to an album variable based on the url parameter -> album.slug
       const album = albumData.find(album => {
          return album.slug === this.props.match.params.slug
       });
@@ -37,7 +37,7 @@ class Album extends Component {
       this.setState({ currentSong: song });
    }
 
-   // create a method and seet a variable named isSameSong that is true if
+   // create a method and save a variable named isSameSong that is true if
    // the user clicked on the current song, an false otherwise.
    handleSongClick(song) {
       const isSameSong = this.state.currentSong === song;
@@ -68,6 +68,8 @@ class Album extends Component {
                </colgroup>
                <tbody>
                   {
+                     // Loop through album songs.
+                     // onClick call this.handleSongClick and pass in (song).
                      this.state.album.songs.map( (song,index) =>
                         <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
                            <td className="song-actions">
