@@ -52,11 +52,24 @@ class Album extends Component {
 
    handlePrevClick() {
       // call findIndex on the album's songs array. If this.state.currentSong is equal to the song being passed into it, make that the the currentIndex.
-      const currentIndex = this.state.album.songs.findIndex( song => this.state.currentSong === song) ;
+      const currentIndex = this.state.album.songs.findIndex( song => this.state.currentSong === song);
       const newIndex = Math.max(0, currentIndex -1);
       const newSong = this.state.album.songs[newIndex];
       this.setSong(newSong);
       this.play(newSong);
+   }
+
+   handleNextClick() {
+      const currentIndex = this.state.album.songs.findIndex( song => this.state.currentSong === song);
+      const newIndex = Math.max(0, currentIndex + 1);
+      const newSong = this.state.album.songs[newIndex];
+      if (newIndex < this.state.album.songs.length) {
+         this.setSong(newSong);
+         this.play(newSong);
+      } else {
+         this.pause(newSong);
+         return;
+      }
    }
 
    render() {
@@ -101,7 +114,8 @@ class Album extends Component {
                currentSong={this.state.currentSong}
                handleSongClick={() => this.handleSongClick(this.state.currentSong)}
                handlePrevClick={() => this.handlePrevClick()}
-             />
+               handleNextClick={() => this.handleNextClick()}
+            />
          </section>
       );
    }
