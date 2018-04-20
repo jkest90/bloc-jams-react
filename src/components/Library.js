@@ -32,3 +32,5 @@ class Library extends Component {
 }
 
 export default Library;
+
+// create a css file for each component. album.css

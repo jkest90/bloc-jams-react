@@ -29,3 +29,8 @@ class App extends Component {
 }
 
 export default App;
+
+// under source make a stylesheets folder, then put all component css in there.
+// small projects - put css in the same exact location as the js. ie src/components. keep them side by side.
+// if sylesheet folder, make sure ../..
+// otherwise, put in index.css. - things that you want globally, not per component. anything that i know is universal. 
