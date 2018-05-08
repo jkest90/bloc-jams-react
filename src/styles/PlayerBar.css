@@ -1,0 +1,16 @@
+.player-bar {
+   margin-top: 260px;
+}
+
+
+#volume-control {
+   width: 200px;
+   margin-left: 35%;
+   color: rgb(95, 0, 179);
+}
+
+#previous, #play-pause, #next {
+   margin: 0 30px;
+   width: 40px;
+   color: rgb(95, 0, 179);
+}
